@@ -3,7 +3,7 @@
   "description": "A datepicker for twitter bootstrap forked from Stefan Petre's (of eyecon.ro), improvements by eternicode",
   "version": "1.4.1",
   "license": "Apache-2.0",
-  "main": "dist/js/bootstrap-datepicker.js",
+  "main": "dist/js/@aha-app/bootstrap-datepicker.js",
   "keywords": [
     "datepicker",
     "twitter-bootstrap"
@@ -14,6 +14,7 @@
     "dist/*"
   ],
   "scripts": {
+    "prepare": "npm run build",
     "build": "grunt dist",
     "test": "grunt test"
   },
