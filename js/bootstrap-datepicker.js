@@ -203,7 +203,7 @@
 
 			// We need to set the default here as the default option values are set before the DOM has loaded,
 			// meaning currentUser hasn't loaded before it's attempted to be used
-			o.weekStart = window.currentUser.startDay || 0,
+			o.weekStart = window.currentUser?.startDay || 0,
 			o.weekStart %= 7;
 			o.weekEnd = ((o.weekStart + 6) % 7);
 
