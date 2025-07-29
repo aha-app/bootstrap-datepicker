@@ -471,6 +471,18 @@
 				this.picker.appendTo(this.o.container);
 			this.place();
 			this.picker.show();
+			
+			// Check that the node is connected to the page and that the showPopover function is available.
+			const pickerNode = this.picker.get(0);
+			if (pickerNode.isConnected && typeof pickerNode.showPopover === 'function' && typeof pickerNode.hidePopover === 'function') {
+				if (!pickerNode.hasAttribute('popover')) {
+					pickerNode.setAttribute('popover', 'manual');
+				}	
+				// If the node is being re-used (and it is currently open), then we need to hide the popover for a split second since popever stacking is determined by opening order.
+				if (pickerNode.matches(':popover-open')) pickerNode.hidePopover();
+  			pickerNode.showPopover();
+			}
+
 			this._attachSecondaryEvents();
 			this._trigger('show');
 			if ((window.navigator.msMaxTouchPoints || 'ontouchstart' in document) && this.o.disableTouchKeyboard) {
@@ -486,6 +498,12 @@
 			this.picker.hide().detach();
 			this._detachSecondaryEvents();
 			this.setViewMode(this.o.startView);
+
+			// Check that the node is connected to the page and that the showPopover function is available.
+			const pickerNode = this.picker.get(0);
+			if (pickerNode.isConnected && typeof pickerNode.hidePopover === 'function') {
+				if (pickerNode.matches(':popover-open')) pickerNode.hidePopover();
+			}
 
 			if (this.o.forceParse && this.inputField.val())
 				this.setValue();
