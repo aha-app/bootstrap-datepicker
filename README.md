@@ -7,7 +7,7 @@ Please note that this fork is not used on Stefan's page, nor is it maintained or
 
 Versions are incremented according to [semver](http://semver.org/).
 
-Also note that the version used in Aha! app is based on version 1.4.x, and has diverged from the original code is some significant ways.
+Also note that the version used in Aha! app is based on version 1.4.x, and has diverged from the original code in some significant ways.
 
 ## Links
 
