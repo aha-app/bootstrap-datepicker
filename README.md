@@ -9,6 +9,9 @@ Versions are incremented according to [semver](http://semver.org/).
 
 Also note that the version used in Aha! app is based on version 1.4.x, and has diverged from the original code in some significant ways.
 
+## Merging changes in GitHub
+In GitHub, always make sure your PR sets its `base_repository` to `aha-app/bootstrap-datepicker` (our version) rather than `uxsolutions/bootstrap-datepicker` (the original upstream).
+
 ## Links
 
 * [Online Demo](http://eternicode.github.io/bootstrap-datepicker/)
